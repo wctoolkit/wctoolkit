@@ -3,13 +3,13 @@
 MIT License
 Copyright (c) 2023 Paul H Mason. All rights reserved.
 */
-import { DesignToken } from './DesignToken.js';
-import { Icon } from './Icon.js';
-import { ThemeMode, ThemeDensity, IconShape } from './Types.js';
+import { DesignToken } from './design-token.js';
+import { Icon } from './icon.js';
+import { ThemeMode, ThemeDensity, IconShape } from './types.js';
 
 export { DesignToken, Icon }
 
-export class Theme {
+export class BaseTheme {
     static tokens? : any;
     static icons? : any;
 
@@ -73,7 +73,7 @@ export class Theme {
     }
 
     get iconVariants(): Array<string> {
-        return [...new Set([...this.localIcons.values(), ...Theme.globalIcons.values()].map(icon => icon.variants).flat())].sort();
+        return [...new Set([...this.localIcons.values(), ...BaseTheme.globalIcons.values()].map(icon => icon.variants).flat())].sort();
     }
 
     get styleSheet(): string {
@@ -84,22 +84,22 @@ export class Theme {
         return this._styleSheet;
     }
 
-    register(): Theme {
+    register(): BaseTheme {
         window.themeManager.register(this);
         return this;
     }
 
-    unregister(): Theme {
+    unregister(): BaseTheme {
         window.themeManager.unregister(this.name);
         return this;
     }
 
-    use(): Theme {
+    use(): BaseTheme {
         window.themeManager.use(this.name);
         return this;
     }
 
-    makeDefault(): Theme {
+    makeDefault(): BaseTheme {
         window.themeManager.makeDefault(this.name);
         return this;
     }
@@ -123,11 +123,11 @@ export class Theme {
      * Gets all the local (instance) and global (static) token names.
      */
     get tokenNames(): Array<string> {
-        return [...new Set([...this.localTokens.keys(), ...Theme.globalTokens.keys()])].sort();
+        return [...new Set([...this.localTokens.keys(), ...BaseTheme.globalTokens.keys()])].sort();
     }
 
     static addToken(name: string, values: any) {
-        Theme.globalTokens.set(name, new DesignToken(name, values));
+        BaseTheme.globalTokens.set(name, new DesignToken(name, values));
     }
 
     static addTokens(tokens: any = null) {
@@ -140,7 +140,7 @@ export class Theme {
             const tokenContent = tokens[tokenName];
 
             if (tokenContent) {
-                Theme.globalTokens.set(tokenName, new DesignToken(tokenName, tokenContent));
+                BaseTheme.globalTokens.set(tokenName, new DesignToken(tokenName, tokenContent));
             }
         } 
     }
@@ -170,8 +170,8 @@ export class Theme {
     }
 
     _loadGlobalTokens() {
-        if (!Theme._globalTokensLoaded) {
-            const constructor = this.constructor as typeof Theme;
+        if (!BaseTheme._globalTokensLoaded) {
+            const constructor = this.constructor as typeof BaseTheme;
             const { tokens } = constructor;
 
             if (tokens) {
@@ -182,12 +182,12 @@ export class Theme {
                     const tokenContent = tokens[tokenName];
 
                     if (tokenContent) {
-                        Theme.addToken(tokenName, tokenContent);
+                        BaseTheme.addToken(tokenName, tokenContent);
                     }
                 }
             }
 
-            Theme._globalTokensLoaded = true;
+            BaseTheme._globalTokensLoaded = true;
         }
     }
 
@@ -210,12 +210,12 @@ export class Theme {
      * Gets all the instance and global (static) icon names.
      */
     get iconNames(): Array<string> {
-        return [...new Set([...this.localIcons.keys(), ...Theme.globalIcons.keys()])].sort();
+        return [...new Set([...this.localIcons.keys(), ...BaseTheme.globalIcons.keys()])].sort();
     }
 
     static addIcon(name: string, value: any) {
         if (name && value) {
-            Theme.globalIcons.set(name, new Icon(name, value));
+            BaseTheme.globalIcons.set(name, new Icon(name, value));
         }
     }
 
@@ -225,7 +225,7 @@ export class Theme {
         for (let i = 0; i < iconNames.length; i++) {
             const iconName = iconNames[i];
             const iconContent = icons[iconName];
-            Theme.globalIcons.set(iconName, new Icon(iconName, iconContent));
+            BaseTheme.globalIcons.set(iconName, new Icon(iconName, iconContent));
         }
     }
 
@@ -247,10 +247,10 @@ export class Theme {
 
     static aliasIcon(name: string, alias: string) {
         if (name && alias && name !== alias) {
-            const icon = Theme.globalIcons.get(name);
+            const icon = BaseTheme.globalIcons.get(name);
 
             if (icon) {
-                Theme.globalIcons.set(alias, icon);
+                BaseTheme.globalIcons.set(alias, icon);
             }
         }
     }
@@ -267,11 +267,11 @@ export class Theme {
 
     renameIcon(name: string, newName: string) {
         this._renameMapIcon(name, newName, this.localIcons);
-        this._renameMapIcon(name, newName, Theme.globalIcons);
+        this._renameMapIcon(name, newName, BaseTheme.globalIcons);
     }
 
     getIcon(name: string): Icon {
-        return (this.localIcons.has(name) ? this.localIcons.get(name) : Theme.globalIcons.get(name)) || null;
+        return (this.localIcons.has(name) ? this.localIcons.get(name) : BaseTheme.globalIcons.get(name)) || null;
     }
 
     getIconContent(name: string) : string{
@@ -280,8 +280,8 @@ export class Theme {
     }
 
     _loadGlobalIcons() {
-        if (!Theme._globalIconsLoaded) {
-            const constructor = this.constructor as typeof Theme;
+        if (!BaseTheme._globalIconsLoaded) {
+            const constructor = this.constructor as typeof BaseTheme;
             const { icons } = constructor;
 
             if (icons) {
@@ -290,11 +290,11 @@ export class Theme {
                 for (let i = 0; i < iconNames.length; i++) {
                     const iconName = iconNames[i];
                     const iconContent = icons[iconName];
-                    Theme.globalIcons.set(iconName, new Icon(iconName, iconContent));
+                    BaseTheme.globalIcons.set(iconName, new Icon(iconName, iconContent));
                 }
             }
 
-            Theme._globalIconsLoaded = true;
+            BaseTheme._globalIconsLoaded = true;
         }
     }
 
@@ -308,7 +308,7 @@ export class Theme {
 
     _createStyleSheet() {
         if (!this._allTokens || this._tokensDirty) {
-            this._allTokens = [...new Map([...Theme.globalTokens, ...this.localTokens]).values()];
+            this._allTokens = [...new Map([...BaseTheme.globalTokens, ...this.localTokens]).values()];
         }
 
         //console.time('Create Stylesheet');

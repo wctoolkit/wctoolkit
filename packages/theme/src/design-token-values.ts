@@ -3,7 +3,7 @@
 MIT License
 Copyright (c) 2023 Paul H Mason. All rights reserved.
 */
-import { ThemeMode, ThemeDensity, DesignTokenShape } from './Types.js';
+import { ThemeMode, ThemeDensity, DesignTokenShape } from './types.js';
 
 export class DesignTokenValues {
     private _values: DesignTokenShape;

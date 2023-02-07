@@ -10,7 +10,12 @@
     "serve:watch": "turbo run serve:watch",
     "dist": "turbo run dist",
     "serve:dist": "web-dev-server --app-index index.html --node-resolve",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "serve:basic": "turbo run serve:watch --filter=basic-demo",
+    "serve:material": "turbo run serve:watch --filter=material-demo",
+    "serve:fluent": "turbo run serve:watch --filter=fluent-demo",
+    "serve:cupertino": "turbo run serve:watch --filter=cupertino-demo",
+    "serve:enterprise": "turbo run serve:watch --filter=enterprise-demo"
   },
   "workspaces": [
     "config/*",

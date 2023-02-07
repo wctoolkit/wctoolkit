@@ -3,8 +3,8 @@
 MIT License
 Copyright (c) 2023 Paul H Mason. All rights reserved.
 */
-import { ThemeMode, ThemeDensity } from './Types.js';
-import { DesignTokenValues } from './DesignTokenValues.js';
+import { ThemeMode, ThemeDensity } from './types.js';
+import { DesignTokenValues } from './design-token-values.js';
 
 export class DesignToken {
     private _name: string;

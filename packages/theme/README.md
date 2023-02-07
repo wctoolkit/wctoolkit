@@ -21,13 +21,13 @@ To theme an application, you need to import `Theme` in order to create a theme t
 ```
 
 ```javascript
-import { Theme, themeManager } from '@wctoolkit/theme';
+import { BaseTheme, themeManager } from '@wctoolkit/theme';
 ```
 
 A typical custom theme definition looks like this:
 
 ```javascript
-class MyTheme extends Theme {  
+class MyTheme extends BaseTheme {  
     // The theme design tokens that are shared by all brands.
     static get tokens() {
         return {
@@ -59,9 +59,6 @@ This is enough if you only want a single brand (look and feel), but if you want 
 ## Creating Theme Design Tokens
 
 `Theme Design Tokens` are created in a static getter function called `tokens`, and each token is converted to a CSS custom property with the corresponding value. Each token is a name-value pair, where the name value should be kebab-case and the value can be a string (for simple tokens), an object for complex tokens (you can specify different values for `light` and `dark` mode, or `compact`, `confortable` and `sparse` densities), or a reference token.
-
-
-
 
 `Theme Design Tokens` are created in a static getter function called `tokens`, and each token is converted to a CSS custom property with the corresponding value. Theme definitions support light and dark modes by providing an optional dark mode value for design tokens (typically color values). If a dark mode value isn't provided then the light value will be provided for both the light and dark mode. The code snippet below shows the design token definition possibilities.
 

@@ -19,7 +19,7 @@
         },
         "serve:watch": {
             "dependsOn": [
-                "build:watch",
+                "build",
                 "^serve:watch"
             ]
         },

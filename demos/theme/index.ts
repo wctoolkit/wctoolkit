@@ -4,12 +4,12 @@ MIT License
 Copyright (c) 2021 Paul H Mason. All rights reserved.
 */
 import './components';
-import { Theme, themeManager } from '@wctoolkit/theme';
+import { BaseTheme, themeManager } from '@wctoolkit/theme';
 import { Icons, Colors, Typography, Transitions, Border, Spacing } from './theme';
 /**
 This is based on the "Wireframe Web Kit (desktop)" for Adobe XD.
  */
-class TestTheme extends Theme {
+class TestTheme extends BaseTheme {
     static override get icons() {
         return Icons;
     }

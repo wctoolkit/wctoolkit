@@ -1,0 +1,32 @@
+{
+    "name": "@wctoolkit/core",
+    "version": "0.0.1",
+    "private": false,
+    "main": "./src/index.js",
+    "module": "./src/index.js",
+    "scripts": {
+        "build": "tsc --build",
+        "build:watch": "tsc --build --watch",
+        "pub": "npm publish",
+        "pub:dry": "npm publish --dry-run"
+    },
+    "exports": {
+        ".": "./src/index.js",
+        "./package.json": "./package.json"
+    },
+    "files": [
+        "**/*.d.ts",
+        "**/*.js",
+        "**/*.js.map"
+    ],
+    "devDependencies": {
+        "tsconfig": "*"
+    },
+    "dependencies": {
+        "lit": "^2.6.1",
+        "@wctoolkit/theme": "^0.0.1"
+    },
+    "publishConfig": {
+        "access": "public"
+    }
+}

@@ -3,7 +3,7 @@
 MIT License
 Copyright (c) 2023 Paul H Mason. All rights reserved.
 */
-import { IconValues } from './IconValues.js';
+import { IconValues } from './icon-values.js';
 
 export class Icon {
     private _name: string;

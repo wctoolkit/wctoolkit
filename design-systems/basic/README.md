@@ -1,0 +1,1 @@
+A simple bare bones design system that demonstrates the core functionality of the toolkit. It's not intended for production use.

@@ -3,9 +3,9 @@
 MIT License
 Copyright (c) 2023 Paul H Mason. All rights reserved.
 */
-import { ThemeMode, ThemeDensity, TextDirection } from './Types.js';
-import { Theme } from './Theme.js';
-import { Icon } from './Icon.js';
+import { ThemeMode, ThemeDensity, TextDirection } from './types.js';
+import { BaseTheme } from './theme.js';
+import { Icon } from './icon.js';
 
 declare global {
     interface Window { themeManager: ThemeManager; }
@@ -16,8 +16,8 @@ declare global {
 }
 
 export class ThemeManager {
-    private _themes: Map<string, Theme> = new Map<string, Theme>();
-    private _activeTheme: Theme = null;
+    private _themes: Map<string, BaseTheme> = new Map<string, BaseTheme>();
+    private _activeTheme: BaseTheme = null;
     private _defaultThemeName: string = null;
     private _mode: ThemeMode;
     private _density: ThemeDensity = 'comfortable';
@@ -98,7 +98,7 @@ export class ThemeManager {
         return this._activeTheme ? this._activeTheme.name : null;
     }
 
-    register(theme: Theme) {
+    register(theme: BaseTheme) {
         this._themes.set(theme.name, theme);
     }
 
