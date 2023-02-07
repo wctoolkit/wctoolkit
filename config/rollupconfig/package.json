@@ -7,6 +7,8 @@
         "rimraf": "^3.0.2",
         "rollup": "^2.38.1",
         "rollup-plugin-copy": "^3.4.0",
+        "rollup-plugin-terser": "^7.0.2",
+        "rollup-plugin-minify-html-literals": "^1.2.6",
         "@open-wc/building-rollup": "^2.2.1"
     }
 }
