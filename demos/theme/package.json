@@ -1,0 +1,23 @@
+{
+    "name": "theme-demo",
+    "version": "0.0.1",
+    "private": true,
+    "main": "index.js",
+    "module": "index.js",
+    "scripts": {
+        "build": "tsc --build",
+        "build:watch": "tsc --build --watch",
+        "serve": "web-dev-server --node-resolve --app-index index.html",
+        "serve:watch": "web-dev-server --node-resolve --watch --app-index index.html",
+        "dist": "rimraf ../dist/theme && rollup -c rollup.config.js"
+    },
+    "dependencies": {
+        "lit": "^2.5.0",
+        "@wctoolkit/theme": "*"
+    },
+    "devDependencies": {
+        "tsconfig": "*",
+        "serveconfig": "*",
+        "rollupconfig": "*"
+    }
+}

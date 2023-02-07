@@ -1,0 +1,33 @@
+{
+    "$schema": "https://turbo.build/schema.json",
+    "pipeline": {
+        "build": {
+            "dependsOn": [
+                "^build"
+            ]
+        },
+        "build:watch": {
+            "dependsOn": [
+                "^build:watch"
+            ]
+        },
+        "serve": {
+            "dependsOn": [
+                "build",
+                "^serve"
+            ]
+        },
+        "serve:watch": {
+            "dependsOn": [
+                "build:watch",
+                "^serve:watch"
+            ]
+        },
+        "dist": {
+            "dependsOn": [
+                "build",
+                "^dist"
+            ]
+        }
+    }
+}

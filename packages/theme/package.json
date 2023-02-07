@@ -1,0 +1,19 @@
+{
+    "name": "@wctoolkit/theme",
+    "version": "0.0.0",
+    "private": false,
+    "main": "index.js",
+    "module": "index.js",
+    "scripts": {
+        "build": "tsc --build",
+        "build:watch": "tsc --build --watch",
+        "pub": "npm publish",
+        "pub:dry": "npm publish --dry-run"
+    },
+    "devDependencies": {
+        "tsconfig": "*"
+    },
+    "publishConfig": {
+        "access": "public"
+    }
+}

@@ -1,0 +1,12 @@
+{
+    "name": "rollupconfig",
+    "version": "0.0.0",
+    "private": true,
+    "dependencies": {
+        "deepmerge": "^3.2.0",
+        "rimraf": "^3.0.2",
+        "rollup": "^2.38.1",
+        "rollup-plugin-copy": "^3.4.0",
+        "@open-wc/building-rollup": "^2.2.1"
+    }
+}

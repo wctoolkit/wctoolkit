@@ -1,0 +1,42 @@
+{
+  "name": "wctoolkit",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "turbo run build",
+    "build:watch": "turbo run build:watch",
+    "serve": "turbo run serve",
+    "serve:watch": "turbo run serve:watch",
+    "dist": "turbo run dist",
+    "serve:dist": "web-dev-server --app-index index.html --node-resolve",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "workspaces": [
+    "config/*",
+    "demos/*",
+    "packages/*",
+    "design-systems/*"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wctoolkit/wctoolkit.git"
+  },
+  "keywords": [],
+  "author": "Paul H Mason",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/wctoolkit/wctoolkit/issues"
+  },
+  "homepage": "https://github.com/wctoolkit/wctoolkit#readme",
+  "devDependencies": {
+    "turbo": "^1.6.3",
+    "serveconfig": "*"
+  },
+  "engines": {
+    "npm": ">=7.0.0",
+    "node": ">=14.0.0"
+  },
+  "dependencies": {},
+  "packageManager": "npm@8.19.2"
+}

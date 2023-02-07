@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Theme Demo</title>
+
+    <script type="module">
+        import './index.js';
+    </script>
+
+    <style>
+        html,
+        body {
+            min-height: 100%;
+            padding: 8px;
+            margin: 0;
+            box-sizing: border-box;
+            color: var(--theme-on-window-color);
+            background-color: var(--theme-window-color);
+            transition: var(--theme-transition);
+        }
+
+        h4 {
+            margin: 0 0 8px 0;
+            padding: 0;
+        }
+
+        .color-box {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 300px;
+            height: 200px;
+        }
+
+        .icon-box {
+            box-sizing: border-box;
+            width: 276px;
+            height: 200px;
+        }
+
+        #iconContainer {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: flex-start;
+        }
+
+        demo-icon {
+            margin: 8px;
+            width: 24px;
+            height: 24px;
+        }
+
+        .text-color-box {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            box-sizing: border-box;
+            width: 300px;
+            height: 200px;
+        }
+
+        .primary-light {
+            color: var(--theme-on-primary-light-color);
+            background-color: var(--theme-primary-light-color);
+        }
+
+        .text-color-box>div {
+            margin-bottom: 16px;
+        }
+
+        .primary {
+            color: var(--theme-on-primary-color);
+            background-color: var(--theme-primary-color);
+        }
+
+        .primary-dark {
+            color: var(--theme-on-primary-dark-color);
+            background-color: var(--theme-primary-dark-color);
+        }
+
+        .row-container {
+            display: flex;
+            flex-wrap: wrap;
+            margin-bottom: 32px;
+        }
+
+        .card {
+            color: var(--theme-on-surface-color);
+            background-color: var(--theme-surface-color);
+            margin-right: 24px;
+            padding: 16px 32px;
+            border-radius: 5px;
+            border: 1px solid var(--theme-border-color);
+        }
+
+        .flex-item {
+            margin: 24px;
+        }
+
+        .info {
+            margin-top: 4px;
+            color: var(--theme-text-secondary-color);
+        }
+
+        .font-box {
+            width: 300px;
+        }
+
+        .density-box {
+            height: 260px;
+        }
+
+        table {
+            border-collapse: collapse;
+        }
+
+        th, td {
+            border: 1px solid #E4E4E4;
+            text-align: left;
+            padding: 0 16px;
+            height: var(--theme-spacing-row-height);
+            min-height: var(--theme-spacing-row-height);
+            max-height: var(--theme-spacing-row-height);
+            box-sizing: border-box;
+        }
+    </style>
+
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+</head>
+
+<body class="typography-body" hidden>
+    <div class="row-container">
+        <demo-mode-switcher></demo-mode-switcher>
+        <demo-brand-switcher id="brandSwitcher"></demo-brand-switcher>
+        <demo-density-switcher></demo-density-switcher>
+        <demo-icon-variant-switcher id="iconVariantSwitcher"></demo-icon-variant-switcher>
+    </div>
+
+    <div class="row-container">
+        <demo-card class="flex-item color-box primary-light typography-title">Primary Light</demo-card>
+        <demo-card class="flex-item color-box primary typography-title">Primary</demo-card>
+        <demo-card class="flex-item color-box primary-dark typography-title">Primary Dark</demo-card>
+
+        <demo-card class="flex-item text-color-box typography-subtitle">
+            <div class="primary-text">Primary Text</div>
+            <div class="secondary-text">Secondary Text</div>
+            <div class="disabled-text">Disabled Text</div>
+        </demo-card>
+
+        <demo-card class="flex-item icon-box typography-body">
+            <div id="iconContainer"></div>
+        </demo-card>
+
+        <demo-card class="flex-item font-box">
+            <div class="typography-item">
+                <div class="typography-headline">Headline</div>
+                <div class="typography-note info">Bold 40px</div>
+            </div>
+
+            <div class="typography-item">
+                <div class="typography-title">Title</div>
+                <div class="typography-note info">Bold 30px</div>
+            </div>
+
+            <div class="typography-item">
+                <div class="typography-subtitle">Subtitle</div>
+                <div class="typography-note info">Regular 20px</div>
+            </div>
+
+            <div class="typography-item">
+                <div class="typography-quote">Quote</div>
+                <div class="typography-note info">Italic 14px</div>
+            </div>
+
+            <div class="typography-item">
+                <div class="typography-body">Body</div>
+                <div class="typography-note info">Regular 14px</div>
+            </div>
+
+            <div class="typography-item">
+                <div class="typography-placeholder">Placeholder</div>
+                <div class="typography-note info">Italic 14px</div>
+            </div>
+
+            <div class="typography-item">
+                <div class="typography-button">Button</div>
+                <div class="typography-note info">Bold 14px</div>
+            </div>
+
+            <div class="typography-item">
+                <div class="typography-note">Note</div>
+                <div class="typography-note info">Regular 11px</div>
+            </div>
+
+            <div class="typography-item">
+                <div class="typography-code">Code</div>
+                <div class="typography-note info">Regular Mono 14px</div>
+            </div>
+        </demo-card>
+
+        <demo-card class="flex-item density-box">
+            <table>
+                <tr>
+                    <th>Dessert</th>
+                    <th>Calories</th>
+                    <th>Fat</th>
+                    <th>Carbs</th>
+                </tr>
+
+                <tr>
+                    <td>Frozen Yoghurt</td>
+                    <td>159</td>
+                    <td>6.0</td>
+                    <td>24</td>
+                </tr>
+
+                <tr>
+                    <td>Ice Cream Sandwich</td>
+                    <td>237</td>
+                    <td>9.0</td>
+                    <td>37</td>
+                </tr>
+
+                <tr>
+                    <td>Eclair</td>
+                    <td>262</td>
+                    <td>16.0</td>
+                    <td>24</td>
+                </tr>
+            </table>
+        </demo-card>
+    </div>
+
+    <script>
+        function themeChange(e) {
+            if (e.target.checked) {
+                window.themeManager.use(e.target.value);
+            }
+        }
+
+        function updateIcons() {
+            const iconContainer = document.getElementById('iconContainer');
+            iconContainer.innerHTML = '';
+
+            window.themeManager.iconNames.forEach(icon => {
+                const iconElement = document.createElement('demo-icon');
+                iconElement.icon = icon;
+                iconElement.title = icon;
+                iconContainer.appendChild(iconElement);
+            });
+        }
+
+        window.addEventListener('theme-changed', () => {
+            updateIcons();
+        });
+
+        window.addEventListener('load', (event) => {
+            const brandSwitcher = document.getElementById('brandSwitcher');
+            brandSwitcher.load();
+
+            const iconVariantSwitcher = document.getElementById('iconVariantSwitcher');
+            iconVariantSwitcher.load();
+
+            const body = document.querySelector('body');
+            body.hidden = false;
+        });
+    </script>
+</body>
+
+</html>

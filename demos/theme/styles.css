@@ -1,0 +1,127 @@
+.typography-headline {
+    font: var(--theme-typography-headline);
+    text-transform: var(--theme-typography-headline-transform);
+}
+
+.typography-title {
+    font: var(--theme-typography-title);
+    text-transform: var(--theme-typography-title-transform);
+}
+
+.typography-subtitle {
+    font: var(--theme-typography-subtitle);
+    text-transform: var(--theme-typography-subtitle-transform);
+}
+
+.typography-quote {
+    font: var(--theme-typography-quote);
+    text-transform: var(--theme-typography-quote-transform);
+}
+
+.typography-body {
+    font: var(--theme-typography-body);
+    text-transform: var(--theme-typography-body-transform);
+}
+
+.typography-placeholder {
+    font: var(--theme-typography-placeholder);
+    text-transform: var(--theme-typography-placeholder-transform);
+}
+
+.typography-button {
+    font: var(--theme-typography-button);
+    text-transform: var(--theme-typography-button-transform);
+}
+
+.typography-note {
+    font: var(--theme-typography-note);
+    text-transform: var(--theme-typography-note-transform);
+}
+
+.typography-code {
+    font: var(--theme-typography-code);
+    text-transform: var(--theme-typography-code-transform);
+}
+
+/*
+.typography-headline {
+    font-family: var(--theme-typography-headline-font);
+    font-size: var(--theme-typography-headline-size);
+    font-weight: var(--theme-typography-headline-weight);
+    font-style: var(--theme-typography-headline-style);
+    text-transform: var(--theme-typography-headline-transform);
+}
+
+.typography-title {
+    font-family: var(--theme-typography-title-font);
+    font-size: var(--theme-typography-title-size);
+    font-weight: var(--theme-typography-title-weight);
+    font-style: var(--theme-typography-title-style);
+    text-transform: var(--theme-typography-title-transform);
+}
+
+.typography-subtitle {
+    font-family: var(--theme-typography-subtitle-font);
+    font-size: var(--theme-typography-subtitle-size);
+    font-weight: var(--theme-typography-subtitle-weight);
+    font-style: var(--theme-typography-subtitle-style);
+    text-transform: var(--theme-typography-subtitle-transform);
+}
+
+.typography-quote {
+    font-family: var(--theme-typography-quote-font);
+    font-size: var(--theme-typography-quote-size);
+    font-weight: var(--theme-typography-quote-weight);
+    font-style: var(--theme-typography-quote-style);
+    text-transform: var(--theme-typography-quote-transform);
+}
+
+.typography-body {
+    font-family: var(--theme-typography-body-font);
+    font-size: var(--theme-typography-body-size);
+    font-weight: var(--theme-typography-body-weight);
+    font-style: var(--theme-typography-body-style);
+    text-transform: var(--theme-typography-body-transform);
+}
+
+.typography-placeholder {
+    font-family: var(--theme-typography-placeholder-font);
+    font-size: var(--theme-typography-placeholder-size);
+    font-weight: var(--theme-typography-placeholder-weight);
+    font-style: var(--theme-typography-placeholder-style);
+    text-transform: var(--theme-typography-placeholder-transform);
+}
+
+.typography-button {
+    font-family: var(--theme-typography-button-font);
+    font-size: var(--theme-typography-button-size);
+    font-weight: var(--theme-typography-button-weight);
+    font-style: var(--theme-typography-button-style);
+    text-transform: var(--theme-typography-button-transform);
+}
+
+.typography-note {
+    font-family: var(--theme-typography-note-font);
+    font-size: var(--theme-typography-note-size);
+    font-weight: var(--theme-typography-note-weight);
+    font-style: var(--theme-typography-note-style);
+    text-transform: var(--theme-typography-note-transform);
+}
+*/
+
+/* Not theme related */
+.typography-item {
+    margin-bottom: 16px;
+}
+
+.primary-text {
+    color: var(--theme-text-primary-color);
+}
+
+.secondary-text {
+    color: var(--theme-text-secondary-color);
+}
+
+.disabled-text {
+    color: var(--theme-text-disabled-color);
+}

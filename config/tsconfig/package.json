@@ -1,0 +1,13 @@
+{
+    "name": "tsconfig",
+    "version": "0.0.0",
+    "private": true,
+    "files": [
+        "base.json"
+    ],
+    "dependencies": {
+        "@types/node": "^18.11.18",
+        "typescript": "~4.7.4",
+        "tslib": "^2.4.1"
+    }
+}

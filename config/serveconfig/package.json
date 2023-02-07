@@ -1,0 +1,8 @@
+{
+    "name": "serveconfig",
+    "version": "0.0.0",
+    "private": true,
+    "dependencies": {
+        "@web/dev-server": "~0.1.35"
+    }
+}
