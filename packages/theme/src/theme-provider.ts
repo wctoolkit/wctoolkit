@@ -8,14 +8,14 @@ import { BaseTheme } from './theme.js';
 import { Icon } from './icon.js';
 
 declare global {
-    interface Window { themeManager: ThemeManager; }
+    interface Window { themeProvider: ThemeProvider; }
 }
 
 declare global {
     interface Navigator { userAgentData: any; }
 }
 
-export class ThemeManager {
+export class ThemeProvider {
     private _themes: Map<string, BaseTheme> = new Map<string, BaseTheme>();
     private _activeTheme: BaseTheme = null;
     private _defaultThemeName: string = null;
@@ -181,4 +181,5 @@ export class ThemeManager {
     }
 }
 
-export const themeManager = window.themeManager = window.themeManager || new ThemeManager();
+window.themeProvider = window.themeProvider || new ThemeProvider();
+export const themeProvider = window.themeProvider;

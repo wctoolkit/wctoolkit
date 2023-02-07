@@ -1,0 +1,11 @@
+.small {
+    font: var(--bd-typography-small);
+}
+
+.medium {
+    font: var(--bd-typography-medium);
+}
+
+.large {
+    font: var(--bd-typography-large);
+}

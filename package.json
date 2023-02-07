@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "clean": "turbo run clean",
     "build": "turbo run build",
     "build:watch": "turbo run build:watch",
     "serve": "turbo run serve",
@@ -11,6 +12,7 @@
     "dist": "turbo run dist",
     "serve:dist": "web-dev-server --app-index index.html --node-resolve",
     "test": "echo \"Error: no test specified\" && exit 1",
+    "serve:theme": "turbo run serve:watch --filter=theme-demo",
     "serve:basic": "turbo run serve:watch --filter=basic-demo",
     "serve:material": "turbo run serve:watch --filter=material-demo",
     "serve:fluent": "turbo run serve:watch --filter=fluent-demo",

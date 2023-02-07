@@ -4,7 +4,7 @@ MIT License
 Copyright (c) 2021 Paul H Mason. All rights reserved.
 */
 import './components';
-import { BaseTheme, themeManager } from '@wctoolkit/theme';
+import { BaseTheme, themeProvider } from '@wctoolkit/theme';
 import { Icons, Colors, Typography, Transitions, Border, Spacing } from './theme';
 /**
 This is based on the "Wireframe Web Kit (desktop)" for Adobe XD.
@@ -47,11 +47,11 @@ const greenThemeBrand = new TestTheme('green', '#A5D6A7', '#388E3C', '#1B5E20');
 redThemeBrand.addToken('theme-typography-title-font', '{theme-typography-font-serif}');
 greenThemeBrand.addToken('theme-border-radius-m', '25px');
 
-themeManager.register(blueThemeBrand);
-themeManager.register(redThemeBrand);
-themeManager.register(greenThemeBrand);
-themeManager.mode = 'system';
-//themeManager.iconVariant = 'twoTone';
-themeManager.use(blueThemeBrand.name);
+themeProvider.register(blueThemeBrand);
+themeProvider.register(redThemeBrand);
+themeProvider.register(greenThemeBrand);
+themeProvider.mode = 'system';
+//themeProvider.iconVariant = 'twoTone';
+themeProvider.use(blueThemeBrand.name);
 
-export { themeManager }
+export { themeProvider }

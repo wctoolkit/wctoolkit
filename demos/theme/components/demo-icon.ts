@@ -3,7 +3,7 @@
 MIT License
 Copyright (c) 2021 Paul H Mason. All rights reserved.
 */
-import { themeManager } from '@wctoolkit/theme';
+import { themeProvider } from '@wctoolkit/theme';
 import { html, css, LitElement } from 'lit';
 import { unsafeHTML } from 'lit/directives/unsafe-html.js';
 import { customElement, property } from 'lit/decorators.js';
@@ -44,7 +44,7 @@ export class DemoIcon extends LitElement {
     }
 
     override render() {
-        const icon = themeManager.getIconContent(this.icon);
+        const icon = themeProvider.getIconContent(this.icon);
         return html`${icon ? unsafeHTML(icon) : null}`;
     }
 }

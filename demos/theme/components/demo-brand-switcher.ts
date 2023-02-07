@@ -3,7 +3,7 @@
 MIT License
 Copyright (c) 2021 Paul H Mason. All rights reserved.
 */
-import { themeManager } from '@wctoolkit/theme';
+import { themeProvider } from '@wctoolkit/theme';
 import { html, css, LitElement } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
 
@@ -78,12 +78,12 @@ export class DemoBrandSwitcher extends LitElement {
     }
 
     load() {
-        this.brands = [...themeManager.themeNames];
+        this.brands = [...themeProvider.themeNames];
     }
 
     _brandChanged(e: any) {
         if (e.target.checked) {
-            themeManager.use(e.target.id);
+            themeProvider.use(e.target.id);
         }
     }
 }

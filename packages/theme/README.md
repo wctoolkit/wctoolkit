@@ -10,18 +10,18 @@ npm install @wctoolkit/theme --save
 
 Before getting into creating themes, there are 3 important concepts to understand.
 
-* ThemeManager: This class manages all the theme instances (brands) for an application. A singleton instance, `window.themeManager` is automatically created that you will interact with.
+* ThemeProvider: This class manages all the theme instances (brands) for an application. A singleton instance, `window.themeProvider` is automatically created that you will interact with.
 * Theme: This is the application or design system specific template for all brands and defines all the required design tokens and icons. It is created by subclassing `Theme`.
 * Brand: This is a named instance of the `Theme` subclass which allows you to create one or more unique brands or variants by overriding the default design token and icon values. You will always have a least one brand (instance).
 
-To theme an application, you need to import `Theme` in order to create a theme template, and `themeManager` which is used to register the theme brands that you create and set the active theme brand.
+To theme an application, you need to import `Theme` in order to create a theme template, and `themeProvider` which is used to register the theme brands that you create and set the active theme brand.
 
 ```html
 <div class="thing">Hello</div>
 ```
 
 ```javascript
-import { BaseTheme, themeManager } from '@wctoolkit/theme';
+import { BaseTheme, themeProvider } from '@wctoolkit/theme';
 ```
 
 A typical custom theme definition looks like this:

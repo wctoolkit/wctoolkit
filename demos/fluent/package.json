@@ -5,6 +5,7 @@
     "main": "index.js",
     "module": "index.js",
     "scripts": {
+        "clean": "tsc --build --clean",
         "build": "tsc --build",
         "build:watch": "tsc --build --watch",
         "serve": "web-dev-server --node-resolve --app-index index.html",

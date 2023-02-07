@@ -5,6 +5,7 @@
     "main": "./src/index.js",
     "module": "./src/index.js",
     "scripts": {
+        "clean": "tsc --build --clean",
         "build": "tsc --build",
         "build:watch": "tsc --build --watch",
         "pub": "npm publish",

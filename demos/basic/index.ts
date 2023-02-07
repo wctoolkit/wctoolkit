@@ -1,6 +1,16 @@
 /**
 @license
 MIT License
-Copyright (c) 2021 Paul H Mason. All rights reserved.
+Copyright (c) 2023 Paul H Mason. All rights reserved.
 */
-export const a = 'basic';
+import { provideDesignSystem, Theme} from '@wctoolkit/basic';
+
+const defaultThemeBrand = new Theme('default');
+
+provideDesignSystem()
+    .registerThemes(
+        defaultThemeBrand
+    )
+    .useThemeBrand(
+        defaultThemeBrand.name
+    );

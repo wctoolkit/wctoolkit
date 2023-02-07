@@ -3,7 +3,7 @@
 MIT License
 Copyright (c) 2021 Paul H Mason. All rights reserved.
 */
-import { themeManager } from '@wctoolkit/theme';
+import { themeProvider } from '@wctoolkit/theme';
 import { html, css, LitElement } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
 
@@ -78,7 +78,7 @@ export class DemoModeSwitcher extends LitElement {
 
     _modeChanged(e: any) {
         if (e.target.checked) {
-            themeManager.mode = e.target.id.toLowerCase();
+            themeProvider.mode = e.target.id.toLowerCase();
         }
     }
 }

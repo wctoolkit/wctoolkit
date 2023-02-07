@@ -85,22 +85,22 @@ export class BaseTheme {
     }
 
     register(): BaseTheme {
-        window.themeManager.register(this);
+        window.themeProvider.register(this);
         return this;
     }
 
     unregister(): BaseTheme {
-        window.themeManager.unregister(this.name);
+        window.themeProvider.unregister(this.name);
         return this;
     }
 
     use(): BaseTheme {
-        window.themeManager.use(this.name);
+        window.themeProvider.use(this.name);
         return this;
     }
 
     makeDefault(): BaseTheme {
-        window.themeManager.makeDefault(this.name);
+        window.themeProvider.makeDefault(this.name);
         return this;
     }
 
@@ -329,9 +329,7 @@ export class BaseTheme {
                     themeDarkCssVariablesArray.push(dark);
                     themeAllCssVariablesArray.push(dark);
                 } else {
-                    
                     if (this.mode === 'dark') {
-                        
                         themeAllCssVariablesArray.push(light);
                     }
                 }

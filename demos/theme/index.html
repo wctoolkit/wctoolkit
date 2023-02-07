@@ -239,7 +239,7 @@
     <script>
         function themeChange(e) {
             if (e.target.checked) {
-                window.themeManager.use(e.target.value);
+                window.themeProvider.use(e.target.value);
             }
         }
 
@@ -247,7 +247,7 @@
             const iconContainer = document.getElementById('iconContainer');
             iconContainer.innerHTML = '';
 
-            window.themeManager.iconNames.forEach(icon => {
+            window.themeProvider.iconNames.forEach(icon => {
                 const iconElement = document.createElement('demo-icon');
                 iconElement.icon = icon;
                 iconElement.title = icon;
